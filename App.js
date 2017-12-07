@@ -62,7 +62,16 @@ export default class App extends Component {
             Log In (Via instagram)
           </LoginButton>
 
-
+          <LoginButton
+            buttonViewStyle={[viewStyles.instagramLoginButtonView, viewStyles.facbookLoginButtonView]}
+            buttonTextStyle={textStyles.instagramButtonTextStyle}
+            buttonTapped={this.buttonTapped}
+            activeOpacity={0.75}
+            iconSource={require('./src/images/facebook-white-logo.png')}
+            touchableHighlightStyle={viewStyles.instagramTouchableHighlightStyle}
+          >
+            Facebook
+          </LoginButton>
         </ScrollView>
 
 
@@ -89,7 +98,7 @@ const viewStyles = {
   instagramLogo: {
     width: (0.45 * windowSize.width),
     height: (0.15 * windowSize.height),
-    marginBottom: 25,
+    marginBottom: 20,
     alignSelf: 'center'
   },
   scrollViewStyle: {
@@ -103,10 +112,17 @@ const viewStyles = {
     width: standardComponentWidth,
     height: sizes.buttonHeight
   },
+    facbookLoginButtonView: {
+      backgroundColor: colors.facebook
+  },
   instagramTouchableHighlightStyle: {
     width: standardComponentWidth,
     height: sizes.buttonHeight,
     marginTop: 5
+  },
+  facebookButtonTouchableHighlightStyle:{
+    marginTop: 20,
+    marginBottom: 5
   }
 
 };
