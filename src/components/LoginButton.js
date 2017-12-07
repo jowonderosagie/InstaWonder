@@ -8,42 +8,39 @@ class LoginButton extends Component {
   }
 
 
-  getViewCompnent = () => {
+  getViewComponent = () => {
     if(this.props.iconSource){
       return(
-        <View style={[this.props.buttonViewStyle, viewStyles.buttonViewStyles]}>
+        <View style={[this.props.buttonViewStyle, viewStyles.buttonViewStyle]}>
           <Image
             resizeMode={'contain'}
             style={[ {width: 30, height: 30},this.props.iconStyle]}
             source={this.props.iconSource}
             />
-          <Text style={[this.props.buttonTextStyle,{ backgroundColor: 'transparent', marginLeft: 20} ]}>{this.props.children}</Text>
+          <Text style={[this.props.buttonTextStyle, { backgroundColor: 'transparent', marginLeft: 20} ]}>{this.props.children}</Text>
         </View>
       );
     }
     else {
       return(
-        <View style={[this.props.buttonViewStyle, viewStyles.buttonViewStyles]}>
+        <View style={[this.props.buttonViewStyle, viewStyles.buttonViewStyle]}>
           <Text style={[this.props.buttonTextStyle,{ backgroundColor: 'transparent'} ]}>{this.props.children}</Text>
         </View>
       );
     }
 
   }
+
   render(){
     return(
       <TouchableHighlight
-        underlaycolor={'transparent'}
+        underlayColor={'transparent'}
         activeOpacity={this.props.activeOpacity}
-        style={[this.props.touchableHighlihgStyle, viewStyles.touchableHighlightStyle]}
+        style={[this.props.touchableHighlihtStyle, viewStyles.touchableHighlightStyle]}
         onPress={this.props.buttonTapped}
 
       >
-
-
-        <View style={[this.props.buttonViewStyle, viewStyles.buttonViewStyles]}>
-          <Text style={[this.props.buttonTextStyle,{ backgroundColor: 'transparent'} ]}>{this.props.children}</Text>
-        </View>
+        {this.getViewComponent()}
       </TouchableHighlight>
     );
   }
@@ -52,15 +49,17 @@ class LoginButton extends Component {
 
 
 const viewStyles = {
-  touchableHighlihgStyle: {
+  touchableHighlihtStyle: {
     justifyContent: 'centre',
     alignItems: 'center'
-},
+
+  },
 
   buttonViewStyle: {
     flexDirection: 'row',
-    justifyContent: 'centre',
+    justifyContent: 'center',
     alignItems: 'center'
+    
   }
 
 };
