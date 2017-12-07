@@ -3,8 +3,24 @@ import { Text, View, ImageBackground, Image, ScrollView } from 'react-native';
 import Dimensions from 'Dimensions';
 
 
+import LoginButton from './src/components/LoginButton'
 const windowSize = Dimensions.get('window');
 
+
+const standardComponentWidth = (0.82 * windowSize.width)
+
+const colors = {
+  facebook: 'rgb(59, 89, 152)',
+  text: 'rgba(255, 255, 255, 0.7)',
+  socialMediaButtonBorderColor: 'rgba(255, 255, 255, 0.35)'
+}
+
+const sizes = {
+  buttonHeight: 45,
+  pageFontSize: 12,
+  borderWidth: 0.8,
+  borderRadius: 5
+}
 
 export default class App extends Component {
 
